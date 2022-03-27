@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="shortcut icon"
+      href="images/JP-BoW-favicon-32px.svg"
+      type="image/svg"
+    />
+    <script src="js/FileSaver.js"></script>
+    <title>Super Sieve</title>
+  </head>
+
+  <body>
+    <!-- ************************ -->
+    <!-- ******** HEADER ******** -->
+    <!-- ************************ -->
+    <header>
+      <div id="flex-header">
+        <span id="super-sieve"> SuperSieve </span>
+        <span
+          ><img
+            id="j-p"
+            src="images/jumping_pixel-white-2-rows-alpha.png"
+            alt="Muc-Off Logo"
+        /></span>
+      </div>
+    </header>
+    <main>
+      <!-- ************************* -->
+      <!-- *****  SECTION ONE  ***** -->
+      <!-- ************************* -->
+      <section class="main-flex-container" id="control-elements">
+        <div class="description one">
+          <details>
+            <summary>1. Input your list of numbers</summary>
+            <p class="details-description">
+              for the lines you want to delete. Leaving the text area empty will
+              result in no changes in the output file.
+            </p>
+          </details>
+        </div>
+        <div class="control section">
+          <div class="box" id="control-input">
+            <form id="input-form" class="width-50">
+              <textarea placeholder="Ex.: 189011, 195023, 205469..."></textarea>
+              <button
+                type="reset"
+                class="ClearButton"
+                id="reset-button-one"
+                value="Reset"
+                onclick="resetConfirmButton()"
+              >
+                Clear
+              </button>
+              <button
+                type="button"
+                id="bicolor-one"
+                class="ConfirmButton"
+                onclick="getControlValues(); confirmAreaColor()"
+              >
+                Confirm
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+      <!-- ************************* -->
+      <!-- *****  SECTION TWO  ***** -->
+      <!-- ************************* -->
+      <section class="main-flex-container" id="output-filename">
+        <div class="description two">
+          <details>
+            <summary>2. Type the output filename</summary>
+            <p class="details-description">
+              into which the new data will be written. Leaving the filename area
+              empty may result in [no name]<code>.txt</code>.
+            </p>
+          </details>
+        </div>
+        <div class="filename section">
+          <div class="box" id="file-name">
+            <div id="output-form" class="width-50">
+              <input type="text" id="document-name" placeholder="filename" />
+              <div id="extension">
+                <span class="centered-in-grid">.txt</span>
+              </div>
+              <button
+                class="ClearButton"
+                id="reset-button-two"
+                type="button"
+                onclick="clearDocumentName()"
+              >
+                Clear
+              </button>
+              <button
+                id="bicolor-two"
+                class="ConfirmButton"
+                type="button"
+                onclick="getDocumentName(); confirmTextBoxColor()"
+              >
+                Confirm
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ************************* -->
+      <!-- ***** SECTION THREE ***** -->
+      <!-- ************************* -->
+      <section class="main-flex-container" id="upload-export">
+        <div class="description three">
+          <details>
+            <summary>3. Choose the file</summary>
+            <p class="details-description">
+              which you want to execute the search. Based on your searching
+              criteria a new file will be created.
+            </p>
+          </details>
+        </div>
+        <div class="upload section">
+          <div class="box" id="upload-original">
+            <div id="upload-file" class="width-50">
+              <button id="clear-all" onclick="refreshPage()">Clear All</button>
+              <button id="save-btn">Upload File</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <script src="js/SuperSieve.js"></script>
+    </main>
+    <!-- ************************ -->
+    <!-- ******** FOOTER ******** -->
+    <!-- ************************ -->
+    <footer>
+      <div id="flex-footer">
+        <p id="copyright">
+          &copy; 2021
+          <a
+            id="jum-pix"
+            href="http://jumping-pixel.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Jumping Pixel</a
+          >
+        </p>
+        <div></div>
+        <p id="version">SuperSieve Version 1.0.1</p>
+      </div>
+    </footer>
+  </body>
+</html>
