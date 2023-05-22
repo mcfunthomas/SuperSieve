@@ -140,7 +140,7 @@ document.getElementById("save-btn").onclick = async()=>{
   let file = await filePick();
   let oldFileArray = file.split("\n");
   let controlArray = getControlValues();
-  let documentName = getDocumentName() + ".txt";
+  let documentName = getDocumentName();
   let outputArray = [newFileContents(oldFileArray, controlArray)];
   let newArray = outputArray[0].split("\n");
   let blob = new Blob(outputArray, {type: "text/plain;charset=utf-8"});
