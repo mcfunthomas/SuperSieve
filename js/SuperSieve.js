@@ -13,7 +13,12 @@ function resetConfirmButton() { // ok
   textArea.style.backgroundColor = "#e5e5e5";
 };
 
-// placeholder="Ex.: 189012, 196023, 200510"
+/* 
+placeholder="Ex.:
+189012
+196023
+200510"
+*/
 
 function confirmAreaColor() { // ok
   let textArea = document.querySelector("textarea");
@@ -43,7 +48,7 @@ function confirmTextBoxColor() { // ok
 // getting a string separated by commas and whitespace and turning this string into an array
 function getControlValues() { // ok
   let controlValues = document.querySelector("textarea").value;
-  controlValues = controlValues.split(", ");
+  controlValues = controlValues.split(/\r?\n/);
   return controlValues;
 };
   
