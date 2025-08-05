@@ -45,7 +45,7 @@ function confirmTextBoxColor() { // ok
 
   };
 };
-// getting a string separated by commas and whitespace and turning this string into an array
+// Get textarea content as an array of strings, splitting on newlines (handles both Unix and Windows line endings)
 function getControlValues() { // ok
   let controlValues = document.querySelector("textarea").value;
   controlValues = controlValues.split(/\r?\n/);
