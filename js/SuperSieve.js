@@ -72,17 +72,8 @@ function getDocumentName() { // ok
 /* ************************************************ */
 
 function findNumber(line) {
-    let numCheck = "";
-    let index = 0;
-    for (var i = 0; i < line.length; i++) {
-      if (line[i] == '"') {
-          index += 1;
-      };
-      if ((index == 3) && (line[i+1] != '"')){
-          numCheck += line[i+1];
-      };
-    };
-    return numCheck;
+  const match = line.match(/1,"(\d+)"/);
+  return match ? match[1] : "";
 };
   
 function newFileContents(inputArray, controlArray) {
